@@ -1,17 +1,20 @@
 import { FC } from 'react';
 import './Autocomplete.css';
+import { Result } from '../../Interface';
 
 interface AutocompleteProps {
   inputText: string;
   setInputText: (value: string) => void;
+  suggestedResults: Result[];
 }
 
 const Autocomplete: FC<AutocompleteProps> = ({
   inputText,
   setInputText,
+  suggestedResults,
 }): JSX.Element => {
 
-  console.log("inputText: ", inputText);
+  console.log("suggestedResults: ", suggestedResults);
 
   return (
     <div className='autocomplete'>
