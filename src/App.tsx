@@ -3,6 +3,7 @@ import './App.css'
 import Autocomplete from './components/Autocomplete';
 import Title from './components/Title';
 import usePokemons from './hooks/usePokemons';
+import useDebounce from './hooks/useDebounce';
 
 function App() {
   const [inputValue, setInputValue] = useState('');
@@ -12,7 +13,8 @@ function App() {
     setInputValue(value);
   };
 
-  const { pokemonResults } = usePokemons(inputValue);
+  const debounedInputValue = useDebounce(inputValue, 300);
+  const { pokemonResults } = usePokemons(debounedInputValue);
 
   return (
     <>
@@ -20,7 +22,7 @@ function App() {
       <Autocomplete
         setInputText={handleSetInputValue}
         inputText={inputValue}
-        suggestedResults={pokemonResults}
+        suggestedResults={pokemonResults || []}
       />
     </>
   )
