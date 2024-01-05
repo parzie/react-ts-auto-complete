@@ -1,0 +1,19 @@
+.autocomplete {
+  background-color: #eee;
+  box-sizing: border-box;
+  margin: 1rem 0 0 0;
+}
+
+.autocomplete__input {
+  display: flex;
+  padding: 10px 20px;
+}
+
+.autocomplete__input input {
+  background-color: #eee;
+  border: none;
+  font-size: 18px;
+  margin-left: 10px;
+  outline: none;
+  width: 100%;
+}

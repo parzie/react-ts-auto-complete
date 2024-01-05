@@ -1,0 +1,11 @@
+.title {
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 650px) {
+  .title {
+    font-size: 3.2rem;
+  }
+}
