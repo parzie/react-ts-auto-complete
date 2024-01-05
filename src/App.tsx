@@ -14,7 +14,7 @@ function App() {
   };
 
   const debounedInputValue = useDebounce(inputValue, 300);
-  const { pokemonResults } = usePokemons(debounedInputValue);
+  const { isLoading, pokemonResults } = usePokemons(debounedInputValue);
 
   return (
     <>
@@ -23,6 +23,7 @@ function App() {
         setInputText={handleSetInputValue}
         inputText={inputValue}
         suggestedResults={pokemonResults || []}
+        isLoading={isLoading}
       />
     </>
   )
