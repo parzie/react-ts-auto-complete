@@ -1,5 +1,6 @@
 .autocomplete-results {
   box-sizing: border-box;
+  display: none;
   list-style: none;
   margin: 0;
   max-height: 400px;
@@ -8,6 +9,10 @@
   position: absolute;
   padding: 0;
   width: 100%;
+}
+
+.autocomplete-results--visible {
+  display: block;
 }
 
 .autocomplete-results li {

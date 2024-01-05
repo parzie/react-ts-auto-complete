@@ -1,6 +1,7 @@
-import { FC } from 'react';
+import { FC, useRef, useState } from 'react';
 import './Autocomplete.css';
 import AutocompleteResults from '../AutocompleteResults';
+import useOnClickOutside from '../../hooks/useOnClickOutside';
 
 interface AutocompleteProps {
   inputText: string;
@@ -13,11 +14,19 @@ const Autocomplete: FC<AutocompleteProps> = ({
   setInputText,
   suggestedResults,
 }): JSX.Element => {
+  const resultsContainer = useRef<HTMLDivElement>(null);
+  const [showSuggestedResults, setShowSuggestedResults] = useState(true);
 
-  console.log("suggestedResults: ", suggestedResults);
+  useOnClickOutside(resultsContainer, () => setShowSuggestedResults(false));
 
   return (
-    <div className='autocomplete'>
+    <div
+      className='autocomplete'
+      ref={resultsContainer}
+      onClick={() => {
+        setShowSuggestedResults(true);
+      }}
+    >
       <div className='autocomplete__input'>
         <input
           type="text"
@@ -27,7 +36,9 @@ const Autocomplete: FC<AutocompleteProps> = ({
         />
       </div>
       <AutocompleteResults
-          suggestedResults={suggestedResults}
+        suggestedResults={suggestedResults}
+        showSuggestedResults={showSuggestedResults}
+        inputText={inputText}
       />
     </div>
   );
