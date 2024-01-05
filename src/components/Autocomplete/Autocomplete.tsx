@@ -1,11 +1,10 @@
 import { FC } from 'react';
 import './Autocomplete.css';
-import { Result } from '../../Interface';
 
 interface AutocompleteProps {
   inputText: string;
   setInputText: (value: string) => void;
-  suggestedResults: Result[];
+  suggestedResults: string[];
 }
 
 const Autocomplete: FC<AutocompleteProps> = ({
