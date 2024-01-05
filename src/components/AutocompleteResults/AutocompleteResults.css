@@ -1,0 +1,23 @@
+.autocomplete-results {
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  max-height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  padding: 0;
+  width: 100%;
+}
+
+.autocomplete-results li {
+  background-color: #eee;
+  font-size: 18px;
+  padding-left: 30px;
+  width: 100%;
+}
+
+.autocomplete-results li:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}

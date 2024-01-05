@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import './Autocomplete.css';
+import AutocompleteResults from '../AutocompleteResults';
 
 interface AutocompleteProps {
   inputText: string;
@@ -25,6 +26,9 @@ const Autocomplete: FC<AutocompleteProps> = ({
           value={inputText}
         />
       </div>
+      <AutocompleteResults
+          suggestedResults={suggestedResults}
+      />
     </div>
   );
 };
